@@ -15,6 +15,8 @@ listName varchar(50) NOT NULL
 
 CREATE TABLE image(
 imageID int(5) NOT NULL primary key AUTO_INCREMENT,
+tagID int(5) NULL,
+listID int(5) NOT NULL,
 imageName varchar(50) NOT NULL,
 imageFile varchar(200) NOT NULL,
 description varchar(400),
@@ -22,13 +24,6 @@ userID int(5) NOT NULL,
 CONSTRAINT fk_image_user FOREIGN KEY(userID) REFERENCES users(userID) ON UPDATE CASCADE
 );
 
-
-CREATE TABLE imageList (
-  listId int(5) NOT NULL,
-  imageID int(5) NOT NULL,
-   CONSTRAINT fk_imageList_List FOREIGN KEY(listID) REFERENCES list(listID) ON UPDATE CASCADE,
-  CONSTRAINT fk_imageList_image FOREIGN KEY(imageID) REFERENCES image(imageID) ON UPDATE CASCADE
- );
 
 CREATE TABLE comments (
   commentId int(11) NOT NULL primary key AUTO_INCREMENT ,
@@ -45,9 +40,3 @@ CREATE TABLE tags (
   tagName varchar(50) NOT NULL
 );
 
-CREATE TABLE tags_image (
-  tagId int(5) NOT NULL,
-  imageID int(5) NOT NULL,
-   CONSTRAINT fk_tags_image_tags FOREIGN KEY(tagID) REFERENCES tags(tagID) ON UPDATE CASCADE,
-  CONSTRAINT fk_tags_image_image FOREIGN KEY(imageID) REFERENCES image(imageID) ON UPDATE CASCADE
- );
