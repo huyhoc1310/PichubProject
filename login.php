@@ -24,6 +24,7 @@ session_start()
 //lay thong tin nguoi dung
 		$username = $_POST["username"];
 		$password = $_POST["password"];
+		$userID = $_POST["userID"];
 	//lam sach thong tin
 		$username = strip_tags($username);
 		$username = addslashes($username);
@@ -32,8 +33,12 @@ session_start()
 		if ($username == "" || $password =="") {
 			echo "Ban can nhap day du ten dang nhap va mat khau";
 		}else{
-			$sql = "SELECT * FROM users WHERE username = '$username' and password = '$password' ";
+			$sql = "SELECT * FROM users WHERE username = '$username' and password = '$password'";
+			$sql1 = "SELECT userID FROM users WHERE username = '$username' and password = '$password'";
 			$query = mysqli_query($conn,$sql);
+			$query1 = mysqli_query($conn,$sql1);
+			$num_rows1 = mysqli_num_rows($query1);
+			//$_POST["userID"] = $num_rows1;
 			$num_rows = mysqli_num_rows($query);
 			if ($num_rows==0) {
 				echo "<p align='center' style='color: white'><b>Tên đăng nhập hoặc mật khẩu không đúng.</b></p>";
@@ -41,6 +46,7 @@ session_start()
 			//lưu tên đăng nhập và password vào session
 				$_SESSION['username'] = $username;
 				$_SESSION['password'] = $password;
+				$_SESSION['userID'] = $num_rows1;
 				header('Location: index.php');
 			}
 		}
