@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -26,7 +27,6 @@ if ($conn->connect_error) {
 if(isset($_POST["btn_submit"])){
     $username = $_POST["username"];
     $password = $_POST["password"];
-
     $username = strip_tags($username);
     $username = addslashes($username);
     $password = strip_tags($password);
@@ -35,10 +35,7 @@ if(isset($_POST["btn_submit"])){
         echo "Bạn cần nhập đầy đủ tên đăng nhập và mật khẩu";
     }else{
         $sql = "SELECT * FROM admin WHERE adminname = '$username' and adminpassword = '$password'";
-
         $query = mysqli_query($conn,$sql);
-
-
         $num_rows = mysqli_num_rows($query);
         if ($num_rows==0) {
             echo "<p align='center' style='color: white'><b>Tên đăng nhập hoặc mật khẩu không đúng.</b></p>";
@@ -46,8 +43,7 @@ if(isset($_POST["btn_submit"])){
             //lưu tên đăng nhập và password vào session
             $_SESSION['username'] = $username;
             $_SESSION['password'] = $password;
-
-            header('Location: index.php');
+            header('Location: manager.php');
         }
     }
 }
