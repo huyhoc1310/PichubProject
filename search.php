@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="assets/mobirise-gallery/style.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/trangcanhan.css">
 </head>
 
 <body>
@@ -84,7 +85,13 @@
         </div>
     </nav>
 </section>
-<section class="mbr-gallery mbr-slider-carousel cid-qy5CX7FRyo" id="gallery2-j" data-rv-view="128">
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div>
 
     <?php
     function searchanh()
@@ -113,24 +120,19 @@
     }
 
     $list = searchanh();
-
     ?>
-    <br>
-    <div class="container">
-        <div class="row">
-            <?php foreach($list as $it) { ?>
-                <div style="margin: 10px;">
-                    <h3><?php echo $it['username'] ?></h3>
-                    <img src="<?php echo $it['imageFile'] ?>" width='300' height='250' style="display: inline-block;">
-                </div>
-            <?php }
-            // }
+            <?php foreach ($list as $it) { ?>
+                <a href="">
+                    <div class="col-md-3">
+                        <div class="show-images">
+                            <img src="<?php echo $it['imageFile'] ?>">
+                        </div>
+                    </div>
+                </a>
+                <?php }
             ?>
-
         </div>
-    </div>
-    <section>
-        <br>
+    <br>
         <br>
         <footer>
             <div class="container">
@@ -142,6 +144,7 @@
                     </div>
                 </div>
             </div>
+
         </footer>
         <script src="assets/web/assets/jquery/jquery.min.js"></script>
         <script src="assets/popper/popper.min.js"></script>

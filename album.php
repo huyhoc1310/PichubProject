@@ -1,13 +1,13 @@
 <?php session_start(); ?>
 <html>
 <head>
-    <!-- Site made with Mobirise Website Builder v4.3.4, https://mobirise.com -->
+    <!-- Site made with Mobirise Website Builder v4.3.2, https://mobirise.com -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Mobirise v4.3.4, mobirise.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Home</title>
+    <title>Album</title>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,10 +24,10 @@
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/trangcanhan.css">
-</head>
 
+</head>
 <body>
-<section class="menu cid-qy5EfwEAEs" once="menu" id="menu2-n" data-rv-view="118">
+ <section class="menu cid-qy5EfwEAEs" once="menu" id="menu2-n" data-rv-view="118">
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-toggleable-sm">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -85,120 +85,74 @@
         </div>
     </nav>
 </section>
-<section class="engine">
-    <a href="https://mobirise.co/i">build your own website for free</a>
-</section>
-<section class="header1 cid-qy5CjryeaH mbr-parallax-background" id="header1-i" data-rv-view="120">
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="mbr-white col-md-10">
-                <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">Pichub</h1>
-                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2">Trang web quản lý
-                    album ảnh miễn phí</h3>
-                <p class="mbr-text align-center pb-3 mbr-fonts-style display-5"> Bạn có thể xem và tải những bức ảnh với
-                    chất lượng RAW hoặc những bức ảnh JPEG chất lượng cao</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="features12 cid-qy5EyJyzBW" id="features12-q" data-rv-view="125">
-    <div class="container">
-        <h2 class="mbr-section-title pb-2 mbr-fonts-style display-2"> TÍNH NĂNG CHÍNH</h2>
-        <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style display-5">EVERYTHING IS FREE FOR NON-COMERICAL USE</h3>
-        <div class="media-container-row pt-5">
-            <div class="block-content align-right">
-                <div class="card pl-3 pr-3 pb-5">
-                    <div class="mbr-card-img-title">
-                        <div class="card-img pb-3"><span class="mbri-upload mbr-iconfont" media-simple="true"></span>
-                        </div>
-                        <div class="mbr-crt-title">
-                            <h4 class="card-title py-2 mbr-crt-title mbr-fonts-style display-7"> UPLOAD&nbsp;</h4>
-                        </div>
-                    </div>
-                    <div class="card-box">
-                        <p class="mbr-text mbr-section-text mbr-fonts-style display-7"> UPLOAD ảnh không giới hạn với
-                            chất lượng gốc. </p>
-                    </div>
-                </div>
-                <div class="card pl-3 pr-3 pb-5">
-                    <div class="mbr-card-img-title">
-                        <div class="card-img pb-3"><span class="mbri-drag-n-drop2 mbr-iconfont"
-                                                         media-simple="true"></span></div>
-                        <div class="mbr-crt-title">
-                            <h4 class="card-title py-2 mbr-crt-title mbr-fonts-style display-7"> Easy and Simple to
-                                Use </h4>
-                        </div>
-                    </div>
-                    <div class="card-box">
-                        <p class="mbr-text mbr-section-text mbr-fonts-style display-7"> Dễ dàng sử dụng</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mbr-figure" style="width: 50%;">
-                <img src="assets/images/06.jpg" alt="Mobirise" media-simple="true"></div>
-            <div class="block-content align-left  ">
-                <div class="card pl-3 pr-3 pb-5">
-                    <div class="mbr-card-img-title">
-                        <div class="card-img pb-3"><span class="mbri-features mbr-iconfont" media-simple="true"></span>
-                        </div>
-                        <div class="mbr-crt-title">
-                            <h4 class="card-title py-2 mbr-crt-title mbr-fonts-style display-7">Album và tag</h4>
-                        </div>
-                    </div>
-                    <div class="card-box">
-                        <p class="mbr-text mbr-section-text mbr-fonts-style display-7">Những bức ảnh sẽ được quản lý
-                            theo tag và album</p>
-                    </div>
-                </div>
-                <div class="card pl-3 pr-3 pb-5">
-                    <div class="mbr-card-img-title">
-                        <div class="card-img pb-3"><span class="mbri-sites mbr-iconfont" media-simple="true"></span>
-                        </div>
-                        <div class="mbr-crt-title">
-                            <h4 class="card-title py-2 mbr-crt-title mbr-fonts-style display-7"> Free</h4>
-                        </div>
-                    </div>
-                    <div class="card-box">
-                        <p class="mbr-text mbr-section-text mbr-fonts-style display-7"> Miễn phí 100%</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<div>
-    
-        <div class="col-md-12">
-        <div class="col-md-1"></div>
-        <div class="row">
-            <?php
-                $servername = 'localhost';
-                $username = 'root';
-                $password = '';
-                $db = 'dthpicture';
-                $conn = new mysqli($servername, $username, $password, $db);
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
+<br> 
+<br>
+<br>
+<br> 
+<br>
+<br>
+
+<div class="col-md-12">
+    <div class="row">
+
+        <!--            <div class="show-images">-->
+        <?php
+        $servername = 'localhost';
+        $username = 'root';
+        $password = '';
+        $db = 'dthpicture';
+        $conn = new mysqli($servername, $username, $password, $db);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        if (!isset($_SESSION['username']) && !$_SESSION['password']) {
+            echo "<p align='center'><b>Bạn cần đăng nhập!.</b></p><a  href='Login.php'><p align='center'><b>Đăng nhập</b></p></a>";
+        }
+        if ($_GET['link']) {
+            $albumID = $_GET['link'];
+            $sql = "select albumName from albums where albumID = '$albumID'";
+            $query = mysqli_query($conn, $sql);
+            $num = mysqli_num_rows($query);
+            if ($num > 0) {
+                while ($row = mysqli_fetch_array($query)) {
+                    $albumName = $row['albumName'];
+                    $GLOBALS['albumName'] = $albumName;
                 }
-                $kq = mysqli_query($conn, "SELECT * FROM images");?>
-                <?php foreach ($kq as $it) { ?>
-                <a href="">
-                    <div class="col-md-3">
-                        <div class="show-images">
-                            <img src="<?php echo $it['imageFile'] ?>">
-                        </div>
-                    </div>
-                </a>
-                <?php }
-            ?>
+            }
+        } ?>
+        <div class="col-md-12">
+            <h2>
+                Album: <?php echo $GLOBALS['albumName']; ?>
+            </h2>
         </div>
+        <?php
+        $username = $_SESSION["username"];
+        $albumID = $_GET['link'];
+        $sql = "select * from images where username = ('$username') and albumID = $albumID";
+        $query = mysqli_query($conn, $sql);
+        $num = mysqli_num_rows($query);
+        if ($num > 0) {
+            while ($row = mysqli_fetch_array($query)) {
+                $images = glob($row['imageFile']);
+                foreach ($images as $image)
+                    $image = "\"" . $image . "\"";
+                {
+                    ?>
+                    <a href="">
+                        <div class="col-md-3">
+                            <div class="show-images">
+                                <img alt="image" src=<?php echo $image ?>/>
+                            </div>
+                        </div>
+                    </a>
+                    <?php
+                }
+            }
+        }
+        ?>
+        <!--            </div>-->
     </div>
 </div>
-</div>
-
-
-
-
 <script src="assets/web/assets/jquery/jquery.min.js"></script>
 <script src="assets/popper/popper.min.js"></script>
 <script src="assets/tether/tether.min.js"></script>
@@ -217,6 +171,8 @@
 <script src="assets/mobirise-gallery/player.min.js"></script>
 <script src="assets/mobirise-gallery/script.js"></script>
 <script src="assets/formoid/formoid.min.js"></script>
+<br>
+<br> 
 <footer>
     <div class="container">
         <div align="center">
@@ -229,8 +185,4 @@
     </div>
 </footer>
 </body>
-
 </html>
-
-
-
