@@ -1,10 +1,95 @@
 
 <html>
 <head>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <!--    <link rel="stylesheet" type="text/css" href="css/upload.css">-->
+ <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.3.4, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Upload</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="assets/mobirise-gallery/style.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/trangcanhan.css">
+    <link rel="stylesheet" href="css/upload.css">
 </head>
+
 <body>
+<section class="menu cid-qy5EfwEAEs" once="menu" id="menu2-n" data-rv-view="118">
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <div class="hamburger"><span></span> <span></span> <span></span> <span></span></div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand"> <span class="navbar-logo">
+                    <a href="index.php">
+                        <img src="assets/images/logo2.png" alt="Mobirise" media-simple="true" style="height: 3.8rem;">
+                    </a>
+                </span> <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4"
+                                                             href="index.php">
+                        Pichub</a></span></div>
+        </div>
+        <form action="search.php" method="POST">
+            <div class="wrap">
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="What are you searching for?" name="noidung"
+                           style="color: black">
+                    <button type="submit" class="searchButton" name="searchtag"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-buttons mbr-section-btn">
+                <?php
+                if (isset($_SESSION['username']) && $_SESSION['password']) {
+                    echo '<a class="btn btn-sm btn-primary display-4"  href="upload.php"> <span class="btn-icon mbri-mobile mbr-iconfont mbr-iconfont-btn">
+                    </span> Upload </a>';
+                } else {
+                    echo '
+                    <a class="btn btn-sm btn-primary display-4"  href="login.php"> <span class="btn-icon mbri-mobile mbr-iconfont mbr-iconfont-btn">
+                    </span> Upload </a>';
+                }
+                ?>
+            </div>
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+
+                <?php
+                if (isset($_SESSION['username']) && $_SESSION['password']) {
+                    echo '<li class="nav-item"><a class="nav-link link text-black display-4" href="trangcanhan.php">' . $_SESSION['username'] . '</a>';
+                    echo '<li class="nav-item"><a class="nav-link link text-black display-4" href="logout.php"> Logout </a>';
+                } else {
+                    echo '<li class="nav-item">
+            <a class="nav-link link text-black display-4" href="login.php"> Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link text-black display-4" href="signup.php"> Sign up </a>
+          </li>';
+                }
+                ?>
+
+            </ul>
+        </div>
+    </nav>
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
 <?php
 session_start();
 $servername = 'localhost';
@@ -60,7 +145,7 @@ if (isset($_POST['Submit'])) {
         } else {
 //Lấy dung lượng của file upload
             $size = filesize($_FILES['image']['tmp_name']);
-            if ($size > MAX_SIZE * 10240) {
+            if ($size > MAX_SIZE * 100240) {
                 echo '<h1>Vượt quá dung lượng cho phép!</h1>';
                 $errors = 1;
             }
@@ -109,6 +194,7 @@ if (isset($_POST['Submit']) && !$errors) {
     $sql = "INSERT INTO images(albumID,imageFile,description,username) VALUES ('$albumID', '$newname', '$description', '$username')";
     $query = mysqli_query($conn, $sql);
         if($query){
+            header ('Location: trangcanhan.php');
             $username = $_SESSION['username'];
             $sql = "Select * from images WHERE username = '$username' Order By imageID DESC LImit 1"; 
             $result = $conn->query($sql);
@@ -136,25 +222,21 @@ $copied = null;
 
 <!-- nhớ đặt enctype to "multipart/frm-data"
 và sử dụng  input type "file" -->
-<div class="upload-block">
 
     <form name="newad" method="post" enctype="multipart/form-data"
           action="">
-        <table>
-
-            <tr>
-                <td><input type="file" name="image"></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="description" placeholder="Description"></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="tagName" placeholder="Tag"></td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="searchTerm">Search for:</label>
-                    <label>
+          <center>
+    <fieldset style="width: 690px; height: 310px;">
+        <legend><b>UPLOAD IMAGE</b></legend>
+        <br>
+            <table width="540" border="0" align="center" cellpadding="3" cellspacing="7" >
+                <tr>
+                    <td>Choose image</td>
+                    <td><input type="file" name="image" ></td>
+                </tr>
+                <tr>
+                    <td>Album name</td>
+                    <td>
                         <select name="albumName">
                             <option>Chọn trong danh sách</option>
                             <?php
@@ -177,16 +259,47 @@ và sử dụng  input type "file" -->
                                 }
                             }
                             ?>
-                        </select>
-                    </label>
-                </td>
+                        </select></td>
+                </tr>
+                <tr>
+                <td>Description</td>
+                <td><textarea name="description" style="width: 300px; height: 100px;" ></textarea></td> 
             </tr>
             <tr>
-                <td><input name="Submit" type="submit" value="Upload image" href="trangcanhan.php"/>
-                </td>
+                <td>Tag</td>
+                <td><input type="text" name="tagName" size="34" placeholder='Các tag cách nhau bởi dấu " "'></td>
             </tr>
-        </table>
+                </table>
+             <br>
+             <center>
+                <tr>
+                    <td colspan="2" align="center"> <input name="Submit" type="submit" value="Upload image" href="trangcanhan.php"/></td>
+                </tr>
+               </center>
+            
+  </fieldset>
+</center>
     </form>
-</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <br>
+
+    <footer>
+    <div class="container">
+        <div align="center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Pichub Team 2017<Br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
