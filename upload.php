@@ -1,3 +1,5 @@
+<?php session_start();
+include 'connect.php'; ?>
 <html>
 <head>
  <meta charset="UTF-8">
@@ -89,15 +91,7 @@
 <br>
 <br>
 <?php
-session_start();
 $servername = 'localhost';
-                $username = 'root';
-                $password = '';
-                $db = 'dthpicture';
-                $conn = new mysqli($servername, $username, $password, $db);
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
 if (!isset($_SESSION['username']) && !$_SESSION['password']) {
     echo "<p align='center'><b>Bạn cần đăng nhập để upload ảnh!.</b></p><a  href='Login.php'><p align='center'><b>Đăng nhập</b></p></a>";
 }

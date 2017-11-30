@@ -83,6 +83,10 @@ $username = $_SESSION['username']; ?>
             <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
 
                 <?php
+                $us = $_GET['us'];
+                if(empty($_GET['us'])) {
+                    $us = $_SESSION['username'];
+                }
                 if (isset($_SESSION['username']) && $_SESSION['password']) {
                     echo '<li class="nav-item"><a class="nav-link link text-black display-4" href="trangcanhan.php">' . $_SESSION['username'] . '</a>';
                     echo '<li class="nav-item"><a class="nav-link link text-black display-4" href="logout.php"> Logout </a>';
