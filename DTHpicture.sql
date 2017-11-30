@@ -33,9 +33,6 @@ CREATE TABLE comments (
   CONSTRAINT fk_comments_images FOREIGN KEY(imageID) REFERENCES images(imageID) ON UPDATE CASCADE
   );
 
-
-
-
 CREATE TABLE tags (
   imageID int(5) NOT NULL ,
   tagName varchar(50) NOT NULL,
@@ -43,3 +40,15 @@ CREATE TABLE tags (
 CONSTRAINT fk_tags_images FOREIGN KEY(imageID) REFERENCES images(imageID) ON UPDATE CASCADE
 
 );
+
+CREATE TABLE admin (
+  adminid int(5) not null auto_increment primary key,
+  adminname varchar(50) not null,
+  adminpassword varchar(50) not null
+);
+
+insert into admin (adminname, adminpassword)
+values ('admin', '12345678');
+
+ 
+
